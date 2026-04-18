@@ -3,43 +3,141 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body { margin:0; background:black; }
+body {
+  margin: 0;
+  background: black;
+  font-family: Arial, sans-serif;
+}
 
 img {
-  width:100%;
-  height:100vh;
-  object-fit:cover;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
 }
 
-.overlay {
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  background:rgba(0,0,0,0.8);
-  color:white;
-  padding:25px;
-  text-align:center;
-  border-radius:10px;
-  font-family:Arial;
+.top-overlay {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(22, 54, 44, 0.72);
+  color: white;
+  padding: 14px 18px;
+  text-align: center;
+  border-radius: 14px;
+  z-index: 1000;
+  width: 68vw;
+  max-width: 290px;
+  box-sizing: border-box;
 }
 
-.overlay h1 { margin:0; font-size:32px; }
-.overlay h2 { margin:10px 0 0; font-size:26px; color:#00ffcc; }
-.overlay p { margin:10px 0; font-size:20px; }
+.top-overlay h1 {
+  margin: 0 0 10px 0;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: white;
+}
+
+.top-overlay p {
+  margin: 8px 0;
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+.one-line {
+  white-space: nowrap;
+}
+
+.shadow-name {
+  color: #ffd84d;
+  font-weight: 700;
+}
+
+.phone {
+  color: #ff8a8a;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.first-panel {
+  position: absolute;
+  left: 50%;
+  bottom: 5vh;
+  transform: translateX(-50%);
+  width: 88vw;
+  max-width: 760px;
+  background: rgba(22, 54, 44, 0.72);
+  color: white;
+  padding: 12px 14px;
+  border-radius: 14px;
+  box-sizing: border-box;
+  z-index: 900;
+}
+
+.first-panel p {
+  margin: 6px 0;
+  font-size: 0.88rem;
+  line-height: 1.25;
+}
+
+.answer {
+  color: #ffd84d;
+  font-weight: 700;
+}
+
+.first-screen {
+  position: relative;
+}
+
+@media (max-width: 430px) {
+  .top-overlay {
+    width: 66vw;
+    max-width: 270px;
+    padding: 12px 14px;
+    top: 20%;
+  }
+
+  .top-overlay h1 {
+    font-size: 1.7rem;
+  }
+
+  .top-overlay p {
+    font-size: 0.88rem;
+  }
+
+  .first-panel {
+    width: 92vw;
+    padding: 10px 12px;
+    bottom: 4vh;
+  }
+
+  .first-panel p {
+    font-size: 0.77rem;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="overlay">
+<div class="top-overlay">
   <h1>Aloha</h1>
-  <p>Help Shadow get home</p>
+  <p class="one-line">Help <span class="shadow-name">Shadow</span> get home</p>
   <p>Tracker ID: NLQGAKWP</p>
-  <h2>(808) 930 - 9008</h2>
+  <p class="phone">(808) 830 - 9008</p>
 </div>
 
-<img src="1.jpeg">
+<div class="first-screen">
+  <img src="1.jpeg">
+  <div class="first-panel">
+    <p>Name: <span class="answer">Shadow</span> &nbsp;|&nbsp; Breed: <span class="answer">Russian Blue</span> &nbsp;|&nbsp; Weight: <span class="answer">9 lbs</span> &nbsp;|&nbsp; Sex: <span class="answer">Male</span></p>
+    <p>Last Seen: <span class="answer">Hinano Street/Campbell Ave</span></p>
+    <p>Lives on: <span class="answer">George St</span></p>
+    <p>Features: <span class="answer">White Chest Patch, White Belly Patch, Striped Tail</span></p>
+  </div>
+</div>
+
 <img src="2.jpeg">
 <img src="3.jpeg">
 <img src="4.jpeg">
